@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow DOM Example</title>
+</head>
+<body>
+    <h1>Shadow DOM Test</h1>
+    <div id="shadow-host"></div>
+
+    <script>
+        // Создание Shadow DOM
+        const shadowHost = document.getElementById('shadow-host');
+        const shadowRoot = shadowHost.attachShadow({ mode: 'open' });
+
+        // Вставка кнопки в Shadow DOM
+        shadowRoot.innerHTML = `
+            <style>
+                button {
+                    background-color: #008CBA;
+                    color: white;
+                    padding: 10px 20px;
+                    border: none;
+                    cursor: pointer;
+                    font-size: 16px;
+                }
+            </style>
+            <button id="shadow-button">Click Me</button>
+        `;
+    </script>
+</body>
+</html>
